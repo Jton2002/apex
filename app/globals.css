@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: radial-gradient(circle at 50% 20%, #0f172a 0%, #020617 40%, #000000 100%);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+.glass {
+  background: rgba(15, 23, 42, 0.68);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 24px;
+}
+
+.neon-green {
+  box-shadow: 0 0 30px -8px #22ff88, 0 0 15px -5px #4ade80;
+}
+
+.glowing-orb {
+  width: 168px;
+  height: 168px;
+  background: radial-gradient(circle at 38% 32%, #ffffff, #22ff88 35%, #0ea5e9 65%, transparent);
+  border-radius: 50%;
+  box-shadow: 
+    0 0 90px #22ff88,
+    0 0 160px #4ade80,
+    inset 0 0 70px rgba(255,255,255,0.75);
+  animation: pulse 3.8s ease-in-out infinite, float 7s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.95; }
+  50% { transform: scale(1.08); opacity: 1; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-18px) rotate(3deg); }
+}
+
+.cosmic-bg {
+  background: radial-gradient(circle at 50% 30%, #0f172a 0%, #020617 45%, #000000 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cosmic-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 30%, rgba(34,255,136,0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.glass-card {
+  background: rgba(15, 23, 42, 0.68);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.4);
+}
+
+.neon-emerald {
+  box-shadow: 0 0 20px #22ff88, 0 0 40px #4ade80, 0 0 60px rgba(34,255,136,0.3);
+}
+
+.pulsing-orb {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 60px #22ff88, 0 0 120px #4ade80; }
+  50% { box-shadow: 0 0 90px #22ff88, 0 0 160px #67e8f9; }
+}
+
+.float-orb {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-18px); }
+}
